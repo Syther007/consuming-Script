@@ -18,7 +18,7 @@ TOL=0;
 while :;
 do
         #if curl --max-time 10 -s -w 'Request Code: %{http_code}\n' https://icanhazip.com;
-        if curl --max-time 5 -s -w 'Request Code: %{http_code}\n' ${allThreads[$ArrCnt]};
+        if curl -x "127.0.0.1:443" --max-time 5 -s -w 'Request Code: %{http_code}\n' ${allThreads[$ArrCnt]};
         then ((SUC=SUC+1))
         else ((FAL=FAL+1))
         fi
