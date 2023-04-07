@@ -14,7 +14,7 @@ FAL=0;
 TOL=0;
 while :;
 do
-        if wget -O - -t 1 -T 10 /dev/null ${allThreads[$ArrCnt]};
+        if wget -e use_proxy=yes -e https_proxy=127.0.0.1:443 -O - -t 1 -T 10 /dev/null ${allThreads[$ArrCnt]};
 
         then ((SUC=SUC+1))
         else ((FAL=FAL+1))
